@@ -1,0 +1,369 @@
+html {
+  scroll-behavior: smooth;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+  color: #3b82f6;
+}
+a:hover {
+  color: #1d4ed8;
+}
+body {
+  background-color: #f3f4f6;
+  font-size: 16px;
+  font-family: sans-serif;
+  height: 100vh;
+}
+::-webkit-scrollbar {
+  width: 2px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #fff;
+  border-radius: 10px;
+}
+.sidebar-main {
+  position: relative;
+}
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 250px;
+  height: 100%;
+  background-color: #12171e;
+  display: flex;
+  flex-direction: column;
+  padding: 20px 5px 0 20px;
+}
+nav .logo img {
+  height: 100px;
+}
+nav .logo {
+  margin-bottom: 20px;
+}
+.scrollbox {
+  overflow: auto;
+  visibility: hidden;
+}
+.scrollbox-inner,
+.scrollbox:hover {
+  visibility: visible;
+}
+
+nav ul li {
+  list-style: none;
+  margin-bottom: 15px;
+  padding: 10px;
+}
+
+nav ul li:hover,
+nav ul li.active {
+  background-color: #fff;
+  border-radius: 6px;
+}
+
+nav ul li:hover a,
+nav ul li.active a {
+  color: #12171e;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #fff;
+}
+
+nav ul li a i {
+  margin-right: 10px;
+}
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 250px;
+  background-color: #12171e;
+  padding: 20px;
+  color: #fff;
+}
+footer hr {
+  margin: 15px 0 20px;
+}
+footer .days-left {
+  padding: 10px;
+  color: rgb(233, 54, 9);
+}
+.menu-btn {
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  position: fixed;
+  top: 4;
+  left: 250px;
+  z-index: 100;
+  border-radius: 50%;
+  margin: 10px -20px;
+  background-color: #0d1014;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu-btn.active {
+  position: fixed;
+  top: 4;
+  left: 0px;
+  background-color: #12171e;
+  border-radius: 50px;
+  padding: 10px;
+  margin: 5px 10px;
+}
+.main-active {
+  width: 100%;
+}
+
+main {
+  float: right;
+  width: calc(100% - 250px);
+  /* padding: 10px 30px 0px 40px; */
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 28px;
+  background-color: #f3f4f6;
+}
+main .header {
+  padding: 0px 40px 0px 0px;
+  background-color: #fff;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+main .header img {
+  height: 40px;
+  padding-left: 10px;
+}
+main .header h3 {
+  color: #ea580c;
+}
+
+.icon {
+  cursor: pointer;
+  margin-left: 10px;
+  line-height: 50px;
+}
+.icon span {
+  background: #f00;
+  padding: 5px;
+  border-radius: 50%;
+  color: #fff;
+  vertical-align: top;
+  margin-left: -21px;
+  font-size: 13px;
+}
+.icon img {
+  display: inline-block;
+  width: 40px;
+  margin-top: 20px;
+}
+.icon:hover {
+  opacity: 0.7;
+}
+
+.notifi-box {
+  background-color: #fff;
+  width: 300px;
+  height: 0px;
+  opacity: 0;
+  position: absolute;
+  right: 35px;
+  z-index: -10;
+  transition: 1s opacity, 250ms height;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.notifi-box.box-active {
+  height: 300px !important;
+  opacity: 1;
+  z-index: 1;
+}
+.notifi-box h2 {
+  font-size: 14px;
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+  color: #999;
+}
+.notifi-box h2 span {
+  color: #f00;
+}
+.notifi-item {
+  display: flex;
+  border-bottom: 1px solid #f3f4f6;
+  padding: 10px 5px;
+  margin-bottom: 15px;
+  cursor: pointer;
+}
+.notifi-item:hover {
+  background-color: #f3f4f6;
+}
+.notifi-item .text h4 {
+  color: #777;
+  font-size: 16px;
+}
+.notifi-item .text p {
+  color: #000;
+  font-size: 12px;
+}
+
+main section {
+  padding: 10px 30px 20px 40px;
+  display: grid;
+  grid-template-columns: 40% 60%;
+}
+main section .card-row {
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+main section .col-4 {
+  background-color: #fff;
+  padding: 40px 20px;
+  margin: 10px;
+  border-radius: 6px;
+  text-align: center;
+  font-size: 35px;
+}
+main section .col-4 a {
+  font-size: 20px;
+}
+.logbook {
+  background-color: #fff;
+  padding: 40px 20px;
+  margin: 10px;
+  border-radius: 6px;
+}
+.logbook .days {
+  display: flex;
+  flex-direction: row;
+  /* justify-content: center; */
+  flex-wrap: wrap;
+}
+
+.logbook .days span {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 5px;
+  cursor: pointer;
+  border: 2px solid #12171e;
+}
+.logbook .days div {
+  text-align: center;
+}
+.logbook .days .check {
+  background-color: #ea580c;
+  color: #fff;
+}
+.logbook .days .xmark {
+  background-color: #12171e;
+  color: #fff;
+}
+
+.graph {
+  background-color: #fff;
+  padding: 0px 40px;
+  /* margin: 20px; */
+  border-radius: 6px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+  margin: 1rem;
+}
+.table {
+  background-color: #fff;
+  padding: 10px;
+  margin: 20px;
+  border-radius: 6px;
+}
+table {
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.table td,
+.table th {
+  padding: 0.75rem;
+  /* vertical-align: top; */
+  border: 1px solid #dee2e6;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.badge-warning {
+  color: #212529;
+  background-color: #ffc107;
+}
+
+.badge-pill {
+  padding-right: 0.6em;
+  padding-left: 0.6em;
+  border-radius: 10rem;
+}
+.badge {
+  display: inline-block;
+  padding: 0.25em 0.4em;
+  font-size: 75%;
+  font-weight: 700;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: 0.25rem;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+.badge-success {
+  color: #fff;
+  background-color: #28a745;
+}
+
+@media screen and (max-width: 900px) {
+  main section {
+    grid-template-columns: 30% 70%;
+  }
+  main section .card-row {
+    grid-template-columns: 100%;
+  }
+  .logbook .days span {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  main section {
+    grid-template-columns: 100%;
+  }
+  main section .card-row {
+    grid-template-columns: 100%;
+  }
+  .logbook .days span {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+  main section {
+    padding: 0px;
+  }
+  main section table {
+    width: 100% !important;
+  }
+}

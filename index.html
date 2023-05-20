@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+  </head>
+  <body>
+    <div class="sidebar-main">
+        <div class="menu-btn active">
+          <i class="fa-solid fa-bars"></i>
+        </div>
+        <nav class="sidebar">
+          <header>
+            <div class="logo">
+              <img src="./images/skye8.png" alt="" />
+            </div>
+          </header>
+          <div class="scrollbox">
+            <ul class="scrollbox-inner">
+              <li class="nav-item active" data-id="introduction">
+                <a href="#">
+                  <i class="fa-solid fa-house"></i> &nbsp; Dashboard</a
+                >
+              </li>
+              <li class="nav-item" data-id="variable">
+                <a href="#">
+                  <i class="fa-solid fa-list-check"></i> &nbsp; Tasks</a
+                >
+              </li>
+              <li class="nav-item" data-id="data-type">
+                <a href="#">
+                  <i class="fa-solid fa-bell"></i> &nbsp; Announcements</a
+                >
+              </li>
+              <li class="nav-item" data-id="function">
+                <a href="#">
+                  <i class="fa-solid fa-boxes-stacked"></i> &nbsp; Specializations</a
+                >
+              </li>
+              <li class="nav-item" data-id="object">
+                <a href="#"> <i class="fa-solid fa-users"></i> &nbsp; Users</a>
+              </li>
+              <li class="nav-item" data-id="object">
+                <a href="#"> <i class="fa-solid fa-book"></i> &nbsp; Log Book</a>
+              </li>
+            </ul>
+          </div>
+          <footer>
+            <hr />
+            <ul>
+              <li>
+                <a href="#"> <i class="fa-solid fa-gear"></i></i> Profile </a>
+              </li>
+              <li>
+                <a href="#">
+                  Log Out  &nbsp; <i class="fa-solid fa-right-from-bracket"></i>
+                </a>
+              </li>
+            </ul>
+            <div class="days-left">
+              <p>148d 9h 48m 59s </p>
+            </div>
+          </footer>
+        </nav>
+    </div>
+    <main class="main-active">
+        <div class="header">
+            <h3>Hi, <span>Chi</span> </h3>
+            <img src="./images/user.png" alt=""> 
+            <div>
+                <div class="icon" id="icon">
+                  <img src="./images/bell.png" alt=""> <span>02</span>
+                </div>
+                    <div class="notifi-box" id="box">
+                        <h2>Notifications <span>2</span></h2>
+                        <div class="notifi-item">
+                          <div class="text">
+                            <h4><a href="#">Skye8 Admin</a></h4>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis, molestias?</p>
+                          </div> 
+                        </div>
+
+                        <div class="notifi-item">
+                          <div class="text">
+                            <h4><a href="#">Uni B</a></h4>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio, natus.</p>
+                          </div> 
+                        </div>
+                    </div>
+            </div>
+        </div>
+        <section class="main">
+            <div>
+                <div class="card-row">
+                    <div class="col-4"><a href="#">Tasks</a> <br><br>3</div>
+                    <div class="col-4"><a href="#">Announcements</a> <br><br>0</div>
+                    <div class="col-4"><a href="#">My Specializations</a> <br><br>2</div>
+                    <div class="col-4"><a href="#">Users</a> <br><br>41</div>
+                </div>
+                <div class="logbook">
+                    <h3><a href="#">Log Book</a></h3>
+                    <div class="days">
+                        <div>M <br> <span class="check"><i class="fa-solid fa-check"></i></span></div>
+                        <div>T <br> <span class="check"><i class="fa-solid fa-check"></i></span></div>
+                        <div>W <br> <span class="xmark"><i class="fa-solid fa-xmark"></i></span></div>
+                        <div>T <br> <span class="check"><i class="fa-solid fa-check"></i></span></div>
+                        <div>F <br> <span class="check"><i class="fa-solid fa-check"></i></span></div>
+                        <div>S <br> <span></span></div>
+                        <div>S <br> <span></span></div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="graph">
+                    <canvas id="myChart" style="width:100%;max-width:600px"></canvas>
+                </div>
+                <div class="table">
+                    <table class="table table-striped table-hover table-responsive">
+                        <thead>
+                            <tr>
+                                <th scope="col">Title</th>
+                                <th scope="col" style="width: 20%;">End Date</th>
+                                <th scope="col">Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td> <a href="#">Add a sidebar to the ims Dashboard</a>
+                                </td>
+                                <td>2023-05-22</td>
+                                <td> <span class="badge badge-pill badge-warning">Pending</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td> <a href="#">Write a simple comprehensive javascript documentation for begginers</a>
+                                </td>
+                                <td>2023-05-14</td>
+                                <td> <span class="badge badge-pill badge-success">Completed</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td> <a href="#">Fixing 403 error</a>
+                                </td>
+                                <td>2023-04-26</td>
+                                <td> <span class="badge badge-pill badge-success">Completed</span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="./js/main.js"></script>
+  </body>
+</html>
